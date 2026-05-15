@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>E-Millennial Store | African Tech Gear</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Paystack Inline JS -->
+  <script src="https://js.paystack.co/v2/inline.js"></script>
+  <link rel="icon" href="images/EMS.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <span class="span-text">E-Millennial <span class="highlight">Store</span></span>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#shop">Shop</a>
+      </nav>
+      <div class="cart-icon-wrapper">
+        <button class="cart-btn" id="cartBtn">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1>Future-ready gadgets <br>for <span class="highlight">millennials</span> in Africa</h1>
+          <p>Smartwatches, premium audio, mobile accessories & more — curated for the young, bold, and innovative.</p>
+          <a href="#shop" class="cta-btn">Shop Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-image">
+          <img src="images/heroImage.png" alt="Tech gadgets hero">
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container about-container">
+        <div class="about-text">
+          <h2>Empowering Africa's digital generation</h2>
+          <p>E-Millennial Store delivers cutting-edge electronics designed for the modern African youth. From Lagos to Nairobi, we blend affordability, style, and performance. Fast shipping, authentic products, and a seamless shopping experience.</p>
+          <div class="features">
+            <span><i class="fas fa-shield-alt"></i> Secure Paystack payments</span>
+            <span><i class="fas fa-truck"></i> Express delivery</span>
+            <span><i class="fas fa-headset"></i> 24/7 support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop/Products Section -->
+    <section class="shop" id="shop">
+      <div class="container">
+        <h2 class="section-title">🔥 Trending Gadgets</h2>
+        <div class="products-grid" id="productsContainer"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+         E-Millennial Store
+      </div>
+      <div class="copyright">© 2025 | Innovate. Connect. Thrive.</div>
+    </div>
+  </footer>
+
+  <!-- CART MODAL -->
+  <div class="modal-overlay" id="cartModal">
+    <div class="modal-container cart-modal">
+      <div class="modal-header">
+        <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+        <button class="close-modal" id="closeModalBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!-- Cart items list -->
+        <div class="cart-items-list" id="cartItemsList"></div>
+        <!-- User Details Form -->
+        <div class="user-details-form">
+          <h4>Delivery Details</h4>
+          <div class="form-group">
+            <input type="text" id="fullName" placeholder="Full name" autocomplete="off" >
+            <div class="error-msg" id="nameError"></div>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Email address">
+            <div class="error-msg" id="emailError"></div>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phone" placeholder="Phone number (e.g 08012345678)">
+            <div class="error-msg" id="phoneError"></div>
+          </div>
+        </div>
+        <!-- Total Amount -->
+        <div class="cart-total">
+          <span>Total Amount:</span>
+          <span id="cartTotalAmount">GH₵0</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" id="continueShoppingBtn">Continue Shopping</button>
+        <button class="btn-primary" id="checkoutBtn">Checkout <i class="fas fa-lock"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY MODAL (Success) -->
+  <div class="modal-overlay" id="summaryModal">
+    <div class="modal-container summary-modal">
+      <div class="modal-header">
+        <h3><i class="fas fa-check-circle"></i> Payment Successful!</h3>
+      </div>
+      <div class="modal-body" id="summaryContent">
+        <!-- dynamic success message + items -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn-primary" id="summaryOkBtn">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/paystack.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
