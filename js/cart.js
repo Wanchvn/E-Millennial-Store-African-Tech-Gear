@@ -49,9 +49,9 @@ function getCartTotal() {
   return cartItems.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
 }
 function updateCartCountUI() {
-  const totalItems = cartItems.reduce((acc, i) => acc + i.quantity, 0);
+  const distinctItemCount = cartItems.length;
   const countSpan = document.getElementById("cartCount");
-  if (countSpan) countSpan.innerText = totalItems;
+  if (countSpan) countSpan.innerText = distinctItemCount;
 }
 function clearCart() {
   cartItems = [];
